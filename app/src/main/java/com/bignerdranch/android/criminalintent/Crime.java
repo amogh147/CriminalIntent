@@ -55,6 +55,7 @@ public class Crime {
         mSuspect = suspect;
     }
 
+    //TODO: we need to return all file names
     public String getPhotoFilename() {
         return "IMG_" + getId().toString() + ".jpg";
     }

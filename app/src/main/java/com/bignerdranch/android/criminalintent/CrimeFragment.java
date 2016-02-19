@@ -40,7 +40,7 @@ public class CrimeFragment extends Fragment {
     private static final int REQUEST_PHOTO= 2;
 
     private Crime mCrime;//info about the current crime
-    private File mPhotoFile;
+    private File mPhotoFile;//TODO: make a list
     private EditText mTitleField;//EditText view for the crime
     private Button mDateButton;
     private CheckBox mSolvedCheckbox;
@@ -167,7 +167,7 @@ public class CrimeFragment extends Fragment {
         mPhotoButton.setEnabled(canTakePhoto);
 
         //Not sure about this part
-        if (canTakePhoto) {
+        if (canTakePhoto) {//TODO: I think we don't need to change this
             Uri uri = Uri.fromFile(mPhotoFile);
             //The Media provider contains meta data for all available media on both internal and external storage devices.
             captureImage.putExtra(MediaStore.EXTRA_OUTPUT, uri);
@@ -257,6 +257,7 @@ public class CrimeFragment extends Fragment {
         return report;
     }
 
+    //TODO: Update all images
     private void updatePhotoView() {
         if (mPhotoFile == null || !mPhotoFile.exists()) {
             mPhotoView.setImageDrawable(null);
